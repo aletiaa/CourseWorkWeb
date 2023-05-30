@@ -1,0 +1,37 @@
+.google-map {
+    padding-bottom: 50%;
+    position: relative;
+    margin-left: 180px;
+
+    margin-top: 10px;
+}
+
+.google-map iframe {
+
+    height: 287px;
+    width: 679px;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.container-map {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+}
+
+.google-map-small {
+    padding-bottom: 50%;
+    position: relative;
+}
+
+.google-map-small iframe {
+    height: 100px;
+    width: 245px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    border:0;
+    margin-top: 165px;
+}
