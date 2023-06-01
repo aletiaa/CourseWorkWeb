@@ -1,0 +1,50 @@
+.full-width-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Playfair Display SC';
+    font-size: 20px;
+  }
+  
+  .full-width-table th {
+    border: 0px solid white;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  .half-width-table {
+    width: 50%;
+    border-collapse: collapse;
+    font-family: 'Playfair Display SC';
+    font-size: 20px;
+  }
+
+  .half-width-table td {
+    border: 0px solid white;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  .column-image
+  {
+    width: 5%
+  }
+
+  .column-quantity .column-actions
+  {
+    width: 10%;
+  }
+
+  .column-productId .column-price
+  {
+    width: 15%;
+  }
+
+  .column-name
+  {
+    width: 45%
+  }
+
+  .column-content-center
+  {
+    text-align: center;
+  }

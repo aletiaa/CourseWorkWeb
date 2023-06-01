@@ -23,6 +23,10 @@ button {
     margin-bottom: 100px;
 }
 
+button:hover {
+    background-color: black;
+}
+
 @media (max-width: 700px)
 {
     button {
@@ -98,7 +102,8 @@ h4 {
 ul {
     list-style-type: none;
     margin: 0;
-    padding: -1px;
+    padding: 0;
+    text-align: center;
     overflow: hidden;
     background-color: #1E1616;
 }
@@ -110,9 +115,11 @@ ul {
 }
 
 li {
-    float: left;
+    float: none;
     margin: 7px;
     padding: 0 36px 0 36px;
+    display: inline-block;
+    content: center;
 }
 
 @media (max-width: 1300px) {
@@ -134,13 +141,17 @@ a:hover {
     color: darkred;
 }
 
+a:hover svg path {
+    fill: darkred;
+}
+
 li a {
     display: block;
     color: white;
     text-align: center;
     padding:  10px 29px 10px 29px;
     text-decoration: none;
-    height: 20px;
+    /* height: 20px; */
     font-family: 'Playfair Display SC',serif;
     font-weight: normal;
     letter-spacing: 0.2rem;
@@ -179,15 +190,6 @@ span {
     background-color: black;
 }
 
-button.all {
-    margin-left: 40%;
-    margin-top: 60px;
-}
-
-button.all:hover{
-    background-color: black;
-}
-
 .vertical-menu {
     text-align: left;
     position: relative;
@@ -223,6 +225,3 @@ button.all:hover{
     display: flex;
     justify-content: space-between;
 }
-
-
-

@@ -1,0 +1,28 @@
+@model Order
+
+<p class="title">Розкажіть про себе:</h1>
+
+@Html.ValidationSummary(false, "Будь ласка, заповніть відповідні поля:", new { @class = "validation-summary" })
+
+@using (Html.BeginForm("CreateOrder", "Order", FormMethod.Post))
+{
+    <table class="half-width-table">
+        <tr>
+            <td><p class="text-left">Прізвище та Ім'я:</p></td>
+            <td>@Html.TextBoxFor(orderDetails => orderDetails.FullName)</td>
+        </tr>
+        
+        <tr>
+            <td><p class="text-left">Номер телефону:</p></td>
+            <td>@Html.TextBoxFor(orderDetails => orderDetails.PhoneNumber)</td>
+        </tr>
+
+        <tr>
+            <td><p class="text-left">Коментар:</p></td>
+            <td>@Html.TextBoxFor(orderDetails => orderDetails.Comment)</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Підтвердити" class="links"></td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,30 @@
+.links {
+    font-family: "Playfair Display";
+    text-align: center;
+    font-size: 28px;
+    line-height: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: #840810;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+.links:hover{
+    background-color: black;
+    text-decoration: underline;
+    color: #840810;
+}
+
+.remove-cartitem-link {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url('/images/remove-item.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-indent: -9999px;
+    border: none;
+  }

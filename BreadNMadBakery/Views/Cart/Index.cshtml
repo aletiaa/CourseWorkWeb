@@ -1,0 +1,48 @@
+@model Cart
+
+@{
+  var items = Model.GetAllItems();
+  
+  if (items.Count > 0)
+  {
+      <table class="full-width-table">
+         <tr>
+            <th class="column-image"></th>
+            <th class="column-productId column-content-center">Код товару</th>
+            <th class="column-name column-content-center">Назва</th>
+            <th class="column-price column-content-center">Ціна</th>
+            <th class="column-quantity">Кількість</th>
+            <th class="column-actions"></th>
+          </tr>
+        @foreach (var cartItem in Model.GetAllItems())
+        {
+          <tr>
+            <td class="column-content-center">
+              <img class="images-circle" src="./images/@cartItem.ImageName" alt="@cartItem.ProductName" />
+              </td>
+            <td class="column-content-center">@cartItem.ProductId</td>
+            <td class="column-content-center">@cartItem.ProductName</td>
+            <td class="column-content-center">@cartItem.Price грн</td>
+            <td class="column-content-center">@cartItem.Quantity</td>
+            <td class="column-content-center">@Html.ActionLink("Видалити", "RemoveFromCart", "Cart",
+                                                                new {id = @cartItem.ProductId}, 
+                                                                new { @class = "remove-cartitem-link" })</td>
+          </tr>
+        }
+    </table>
+
+    <p class="text" style="text-align: right;">
+      Загальна сума: @Model.GetAllItems().Sum(p => p.Price * p.Quantity) грн
+    </p>
+    
+    <div style="margin-top: 30px;">
+      @Html.ActionLink("Продовжити покупки", "Index", "Products", null, new { @class = "links" })
+      @Html.ActionLink("Оформити замовлення", "NewOrder", "Order", null, new { @class = "links" })
+    </div>
+  }
+  else
+  {
+      <p class="text" style="margin-top: 50px;">Кошик порожній. Час щось додати.</p>
+      @Html.ActionLink("За покупками", "Index", "Products", null, new { @class = "links" })
+  }
+}
