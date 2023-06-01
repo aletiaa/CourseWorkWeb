@@ -198,6 +198,14 @@ span {
     width: 133px;
 }
 
+@media (max-width: 650px)
+{
+    .vertical-menu
+    {
+        display: none;
+    }
+}
+
 .vertical-menu a {
     color: white;
     padding: 35px;
