@@ -1,13 +1,15 @@
-﻿<div class="main-header-image-container">
+﻿@model List<Product>
+
+<div class="main-header-image-container">
             <img class="main-header-image" src="./images/128038-desert-ingredient-kuhnya-vypechka-hlebobulochnye_izdeliya-1920x1080.jpg" alt="Title">
 
             <div class="centered">
                 Мрієте про найкращу випічку в вашому житті?
             </div>
 
-            <button class="btn">
+            <!-- <button class="btn">
                 Замовити
-            </button>
+            </button> -->
         </div>
 
         <p class="title">
@@ -22,26 +24,25 @@
         </p>
 
         <p>
-            <div class="category">
-                <img class="images" style="height: 425px" src="./images/tart1.jpg" />
-                <p class="production-name">яблуневий тарт з малиною та агрусом</p>
-                <p class="prices">1300 грн</p>
-            </div>
-            <div class="category">
-                <img class="images" style="height: 425px" src="./images/donuts.jpg" />
-                <p class="production-name">пончики зі смаком мадагаскарської ванілі </p>
-                <p class="prices">45 грн</p>
-            </div>
-            <div class="category">
-                <img class="images" style="height: 425px" src="./images/lime_tart.jpg" />
-                <p class="production-name">лимонно-лаймовий тарт з м’ятою та кокосом</p>
-                <p class="prices">1650 грн</p>
-            </div>
+            @{
+                foreach(var product in Model)
+                {
+                    <div class="category">
+                        <img class="images" src="./images/@product.ImageName" alt="@product.Name" />
+                        <p class="production-name">@product.Name</p>
+                        <p class="prices">@product.Price грн</p>
+                        <p class="centered">@Html.ActionLink("Замовити", "AddToCart", "Cart", 
+                                    new {
+                                        id = @product.ID,
+                                        productName = @product.Name,
+                                        imageName = @product.ImageName,
+                                        price = @product.Price },
+                                    new { @class = "links" })
+                        </p>
+                    </div>
+                }
+            }
         </p>
-
-        <button class="all">
-            Замовити
-        </button>
 
         <p class="title">
             <u>Доставка і отримання</u>
@@ -62,7 +63,7 @@
         <div class="category-icons">
             <img class="icons" src="./images/buy-home.png" />
             <p class="under-icon-text"><u>ОТРИМУЙ</u></p>
-            <p style="width: 240px; text-align: right; margin-right: 100px; margin-bottom: 150px" class="text">Отримуй доставку від кур’єра або прямо у пекарні.
+            <p style="width: 240px; text-align: right; margin-right: 100px" class="text">Отримуй доставку від кур’єра або прямо у пекарні.
                 При замовленні від 1500 грн доставка кур’єром буде безкоштовною.</p>
         </div>
 

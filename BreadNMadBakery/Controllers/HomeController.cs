@@ -6,16 +6,17 @@ namespace BreadNMadBakery.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ProductsRepository _productsRepository;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ProductsRepository productsRepository)
     {
-        _logger = logger;
+        _productsRepository = productsRepository;
     }
 
     public IActionResult Index()
     {
-        return View();
+        var random3Products = _productsRepository.GetRandomThreeProducts();
+        return View(random3Products);
     }
 
     public IActionResult Privacy()

@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="~/css/map.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/names.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/images.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/tables.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/links.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/validations.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/BreadNMadBakery.style.css" asp-append-version="true" />
     <link href='https://fonts.googleapis.com/css?family=Nova Round' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
@@ -18,41 +21,34 @@
         <p class="company-name">B<span>READ'N'MA</span>D</p>
         <p class="adress"><u>+380666619244</u><br><u>вул. Героїв Дніпра, 69</u></p>
         <h4>пекарня </h4>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Головна</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacts" asp-action="Index">Контакти</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="About" asp-action="Index">Про нас</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Магазин</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Кошик</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div>
+            <ul style="width: 100%">
+                <li>@Html.ActionLink("Головна", "Index", "Home")</li>
+                <li>@Html.ActionLink("Контакти", "Index", "Contacts")</li>
+                <li>@Html.ActionLink("Про нас", "Index", "About")</li>
+                <li>@Html.ActionLink("Магазин", "Index", "Products")</li>
+                <li>
+                    <a href="@Url.Action("Index", "Cart")">
+                        <div>
+                            Кошик 
+                            <svg fill="white" width="20px" height="20px" viewBox="0 0 6.4 6.4" id="Flat" xmlns="http://www.w3.org/2000/svg"><g opacity="0.2"><path d="M0.8 2h4.8V1.4a0.2 0.2 0 0 0 -0.2 -0.2H1a0.2 0.2 0 0 0 -0.2 0.2Z" /></g><g><path d="M5.4 1H1a0.4 0.4 0 0 0 -0.4 0.4v3.6a0.4 0.4 0 0 0 0.4 0.4h4.4a0.4 0.4 0 0 0 0.4 -0.4V1.4a0.4 0.4 0 0 0 -0.4 -0.4Zm0 0.4 0 0.4H1V1.4Zm0 3.6H1V2.2h4.4l0 2.8Z" /><path d="M4.2 2.6a0.2 0.2 0 0 0 -0.2 0.2 0.8 0.8 0 0 1 -1.6 0 0.2 0.2 0 0 0 -0.4 0 1.2 1.2 0 0 0 2.4 0 0.2 0.2 0 0 0 -0.2 -0.2Z" /></g></svg>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="footer text-muted">
+        
+        <hr style="width: 100%; border: none; border-top: 1px solid #ffffff; margin: 50px 0px;">
+        
         <p class="footer-company-name">
                     bread n<span>'ma</span>d
         </p>

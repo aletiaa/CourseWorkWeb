@@ -1,0 +1,17 @@
+.validation-summary-valid {
+    display:none;
+}
+
+.validation-summary {
+    color: red;
+  }
+
+  .validation-summary ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .validation-summary ul li {
+    margin-bottom: 10px;
+  }

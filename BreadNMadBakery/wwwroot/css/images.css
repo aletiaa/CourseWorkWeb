@@ -47,6 +47,12 @@
     justify-content: space-between;
 }
 
+.images-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
 .category-icons {
     align-self: center;
     position: relative;

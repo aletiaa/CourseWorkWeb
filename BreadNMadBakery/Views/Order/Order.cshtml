@@ -1,0 +1,24 @@
+@model Order
+
+<p class="title">Замовлення створене:</h1>
+<table class=""half-width-table">
+    <tr>
+        <td><p class="text-left">Номер замовлення:</p></td>
+        <td><p class="text-left"><b><em>@Model.Id<em></b></td>
+    </tr>
+    <tr>
+        <td><p class="text-left">Прізвище, ім'я:</p></td>
+        <td><p class="text-left"><b><em>@Model.FullName<em></b></p></td>
+    </tr>
+    <tr>
+        <td><p class="text-left">Номер телефону:</p></td>
+        <td><p class="text-left"><b><em>@Model.PhoneNumber<em></b></p></td>
+    </tr>
+    <tr>
+        <td><p class="text-left">Ваші побажання:</p></td>
+        <td><p class="text-left"><b><em>@Model.Comment<em></b></p></td>
+    </tr>
+</table>
+<div style="margin-top: 30px;">
+    @Html.ActionLink("На головну", "Index", "Home", null, new { @class = "links" })
+</div>

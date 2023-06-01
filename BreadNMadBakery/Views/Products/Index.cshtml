@@ -1,0 +1,24 @@
+@model List<Product>
+
+<p class="title">Магазин</p>
+
+<p>
+    @{
+        foreach(Product product in Model)
+        {
+            <div class="category">
+                <img class="images" src="./images/@product.ImageName" alt="@product.Name" />
+                <p class="production-name">@product.Name</p>
+                <p class="prices">@product.Price грн</p>
+                <p class="centered">@Html.ActionLink("Замовити", "AddToCart", "Cart", 
+                                    new {
+                                        id = @product.ID,
+                                        productName = @product.Name,
+                                        imageName = @product.ImageName,
+                                        price = @product.Price },
+                                    new { @class = "links" })
+                </p>
+            </div>
+        }
+    }
+</p>

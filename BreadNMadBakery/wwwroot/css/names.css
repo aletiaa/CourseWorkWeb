@@ -47,8 +47,23 @@ p.text {
     margin-top: 20px;
 }
 
+p.text-left {
+    color: white;
+    font-family: 'Playfair Display';
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: left;
+    margin-top: 20px;
+}
+
 @media (max-width: 700px){
     p.text {
+        font-size: 14px;
+        line-height: 15px;
+    }
+
+    p.text-left {
         font-size: 14px;
         line-height: 15px;
     }
@@ -78,7 +93,7 @@ p.prices {
     line-height: 25px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 100px;
+    /* margin-bottom: 100px; */
 }
 
 p.under-icon-text {
