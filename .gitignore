@@ -1,7 +1,3 @@
 BreadNMadBakery/bin/*
 BreadNMadBakery/obj/*
-BreadNMadBakery/bin/Debug/net7.0/BreadNMadBakery.deps.json
-BreadNMadBakery/bin/Debug/net7.0/BreadNMadBakery.dll
-BreadNMadBakery/bin/Debug/net7.0/BreadNMadBakery.pdb
-BreadNMadBakery/bin/Debug/net7.0/BreadNMadBakery.runtimeconfig.json
-BreadNMadBakery/bin/Debug/net7.0/BreadNMadBakery.staticwebassets.runtime.json
+

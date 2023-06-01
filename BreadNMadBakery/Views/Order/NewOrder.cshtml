@@ -2,6 +2,8 @@
 
 <p class="title">Розкажіть про себе:</h1>
 
+@Html.ValidationSummary(false, "Будь ласка, заповніть відповідні поля:", new { @class = "validation-summary" })
+
 @using (Html.BeginForm("CreateOrder", "Order", FormMethod.Post))
 {
     <table class="half-width-table">
@@ -23,7 +25,4 @@
             <td colspan="2"><input type="submit" value="Підтвердити" class="links"></td>
         </tr>
     </table>
-
-    @Html.ValidationSummary(false, "Будь ласка, заповніть відповідні поля:", new { @class = "validation-summary" })
-
 }
