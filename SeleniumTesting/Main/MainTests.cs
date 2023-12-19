@@ -78,20 +78,17 @@ public class MainTests
     }
 
     [TestMethod]
-    public void GetPagesLinksXPath()
+    public void GetPagesLinks_Home_XPath()
     {
-         //arrange
+        //arrange
         var driver = new ChromeDriver();
         driver.Navigate().GoToUrl("http://localhost:5253");
         
         //act
-        var homePageLink = driver.FindElements(By.XPath("//header/div/ul/li[1]"));
-        // var aboutPageLink = driver.FindElements(By.XPath("//"));
-        // var contactsPageLink = driver.FindElements(By.XPath("//"));
-        // var shopPageLink = driver.FindElements(By.XPath("//"));
-        // var cartPageLink = driver.FindElements(By.XPath("//"));
+        var homePageLink = driver.FindElement(By.XPath("//header/div/ul/li[1]"));
 
         //assert
         Assert.IsNotNull(homePageLink);
+        Assert.AreEqual("Головна", homePageLink.Text);
     }
 }
