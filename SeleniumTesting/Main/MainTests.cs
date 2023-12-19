@@ -8,7 +8,7 @@ namespace SeleniumTesting.Main;
 public class MainTests
 {
     [TestMethod]
-    public void PageTitleText()
+    public void VerifyPageTitleText_ByTitle()
     {
         //arrange
         var driver = new ChromeDriver();
@@ -24,7 +24,7 @@ public class MainTests
     }
 
     [TestMethod]
-    public void MainHeaderText()
+    public void VerifyMainHeaderText_ByTagName()
     {
         //arrange
         var driver = new ChromeDriver();
@@ -39,6 +39,37 @@ public class MainTests
         //assert
         Assert.AreEqual("company-name", className);
         Assert.AreEqual("BREAD'N'MAD", paragraphText);
-      
     }
+
+    [TestMethod]
+    public void VerifyCartImage_ById()
+    {
+        //arrange
+        var driver = new ChromeDriver();
+        driver.Navigate().GoToUrl("http://localhost:5253");
+
+        //act
+        var cartImage = driver.FindElement(By.Id("Flat"));
+
+        //assert
+        Assert.IsNotNull(cartImage);
+        Assert.AreEqual("svg", cartImage.TagName);
+        Assert.AreEqual("20px", cartImage.GetAttribute("width"));
+        Assert.AreEqual("20px", cartImage.GetAttribute("height"));
+        Assert.AreEqual("white", cartImage.GetAttribute("fill"));
+    }
+
+    // [TestMethod]
+    // public void GetPagesLinksXPath()
+    // {
+    //      //arrange
+    //     var driver = new ChromeDriver();
+    //     driver.Navigate().GoToUrl("http://localhost:5253");
+    //     var pagesLinks = driver.FindElements(By.XPath("//"))
+
+    //     //act
+
+
+    //     //assert
+    // }
 }
