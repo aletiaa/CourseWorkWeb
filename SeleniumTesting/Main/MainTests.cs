@@ -78,7 +78,7 @@ public class MainTests
     }
 
     [TestMethod]
-    public void GetPagesLinks_Home_XPath()
+    public void GetPagesLinks_Home_XPath_Direct_Path()
     {
         //arrange
         var driver = new ChromeDriver();
@@ -90,5 +90,63 @@ public class MainTests
         //assert
         Assert.IsNotNull(homePageLink);
         Assert.AreEqual("Головна", homePageLink.Text);
+    }
+
+    [TestMethod]
+    public void GetPagesLinks_About_Us_XPath_Text()
+    {
+        //arrange
+        var driver = new ChromeDriver();
+        driver.Navigate().GoToUrl("http://localhost:5253");
+        
+        //act
+        var aboutPageLink = driver.FindElement(By.XPath("//a[text()='Про нас']"));
+
+        //assert
+        Assert.IsNotNull(aboutPageLink);
+        Assert.AreEqual("Про нас", aboutPageLink.Text);
+    }
+
+     [TestMethod]
+    public void GetPagesLinks_Contacts_XPath_Starts_With()
+    {
+        //arrange
+        var driver = new ChromeDriver();
+        driver.Navigate().GoToUrl("http://localhost:5253");
+        
+        //act
+        var contactPageLink = driver.FindElement(By.XPath("//a[starts-with(text(), 'Конт')]"));
+
+        //assert
+        Assert.IsNotNull(contactPageLink);
+        Assert.AreEqual("Контакти", contactPageLink.Text);
+    }
+
+    public void GetPagesLinks_Contacts_Not_Found_XPath_Starts_With()
+    {
+        //arrange
+        var driver = new ChromeDriver();
+        driver.Navigate().GoToUrl("http://localhost:5253");
+        
+        //act
+        var contactPageLink = driver.FindElement(By.XPath("//a[starts-with(text(), 'онт')]"));
+
+        //assert
+        Assert.IsNull(contactPageLink);
+    }
+
+    [TestMethod]
+    public void GetPagesLinks_Contacts_XPath_Contains()
+    {
+        //arrange
+        var driver = new ChromeDriver();
+        driver.Navigate().GoToUrl("http://localhost:5253");
+        
+        //act
+        var contactPageLink = driver.FindElement(By.XPath("//a[contains(text(), 'онт')]"));
+
+        //assert
+        Assert.IsNotNull(contactPageLink);
+        Assert.AreEqual("Контакти", contactPageLink.Text);
     }
 }
