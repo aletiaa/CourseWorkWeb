@@ -122,3 +122,8 @@ SeleniumTesting/bin/Debug/net8.0/zh-Hant/Microsoft.TestPlatform.CrossPlatEngine.
 SeleniumTesting/bin/Debug/net8.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 SeleniumTesting/bin/Debug/net8.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
 SeleniumTesting/bin/Debug/net8.0/zh-Hant/Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+SeleniumTesting/bin/Debug/net8.0/chromedriver.exe
+SeleniumTesting/bin/Debug/net8.0/WebDriver.dll
+SeleniumTesting/bin/Debug/net8.0/selenium-manager/linux/selenium-manager
+SeleniumTesting/bin/Debug/net8.0/selenium-manager/macos/selenium-manager
+SeleniumTesting/bin/Debug/net8.0/selenium-manager/windows/selenium-manager.exe
