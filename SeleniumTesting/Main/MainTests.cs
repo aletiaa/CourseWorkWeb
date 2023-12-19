@@ -59,17 +59,39 @@ public class MainTests
         Assert.AreEqual("white", cartImage.GetAttribute("fill"));
     }
 
-    // [TestMethod]
-    // public void GetPagesLinksXPath()
-    // {
-    //      //arrange
-    //     var driver = new ChromeDriver();
-    //     driver.Navigate().GoToUrl("http://localhost:5253");
-    //     var pagesLinks = driver.FindElements(By.XPath("//"))
+    [TestMethod]
+    public void VerifyCartImage_XPath_ById()
+    {
+        //arrange
+        var driver = new ChromeDriver();
+        driver.Navigate().GoToUrl("http://localhost:5253");
 
-    //     //act
+        //act
+        var cartImage = driver.FindElement(By.XPath("//*[@id='Flat']"));
 
+        //assert
+        Assert.IsNotNull(cartImage);
+        Assert.AreEqual("svg", cartImage.TagName);
+        Assert.AreEqual("20px", cartImage.GetAttribute("width"));
+        Assert.AreEqual("20px", cartImage.GetAttribute("height"));
+        Assert.AreEqual("white", cartImage.GetAttribute("fill"));
+    }
 
-    //     //assert
-    // }
+    [TestMethod]
+    public void GetPagesLinksXPath()
+    {
+         //arrange
+        var driver = new ChromeDriver();
+        driver.Navigate().GoToUrl("http://localhost:5253");
+        
+        //act
+        var homePageLink = driver.FindElements(By.XPath("//header/div/ul/li[1]"));
+        // var aboutPageLink = driver.FindElements(By.XPath("//"));
+        // var contactsPageLink = driver.FindElements(By.XPath("//"));
+        // var shopPageLink = driver.FindElements(By.XPath("//"));
+        // var cartPageLink = driver.FindElements(By.XPath("//"));
+
+        //assert
+        Assert.IsNotNull(homePageLink);
+    }
 }
