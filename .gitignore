@@ -1,3 +1,15 @@
 BreadNMadBakery/bin/*
 BreadNMadBakery/obj/*
 
+SeleniumTesting/Autotest/obj/Autotest.csproj.nuget.dgspec.json
+SeleniumTesting/Autotest/obj/Autotest.csproj.nuget.g.props
+SeleniumTesting/Autotest/obj/Autotest.csproj.nuget.g.targets
+SeleniumTesting/Autotest/obj/project.assets.json
+SeleniumTesting/Autotest/obj/project.nuget.cache
+SeleniumTesting/Autotest/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+SeleniumTesting/Autotest/obj/Debug/net8.0/Autotest.AssemblyInfo.cs
+SeleniumTesting/Autotest/obj/Debug/net8.0/Autotest.GlobalUsings.g.cs
+SeleniumTesting/Autotest/obj/Debug/net8.0/Autotest.GeneratedMSBuildEditorConfig.editorconfig
+SeleniumTesting/Autotest/obj/Debug/net8.0/Autotest.csproj.AssemblyReference.cache
+SeleniumTesting/Autotest/obj/Debug/net8.0/Autotest.assets.cache
+SeleniumTesting/Autotest/obj/Debug/net8.0/Autotest.AssemblyInfoInputs.cache
