@@ -127,3 +127,4 @@ SeleniumTesting/bin/Debug/net8.0/WebDriver.dll
 SeleniumTesting/bin/Debug/net8.0/selenium-manager/linux/selenium-manager
 SeleniumTesting/bin/Debug/net8.0/selenium-manager/macos/selenium-manager
 SeleniumTesting/bin/Debug/net8.0/selenium-manager/windows/selenium-manager.exe
+SeleniumTesting/bin/Debug/net8.0/WebDriver.Support.dll
