@@ -7,28 +7,37 @@ namespace SeleniumTesting.Main;
 [TestClass]
 public class MainTests
 {
+    private ChromeDriver driver;
+
+    [TestInitialize]
+    public void Initialize()
+    {
+        driver = new ChromeDriver();
+        driver.Navigate().GoToUrl("http://localhost:5253");
+    }
+
+    [TestCleanup]
+    public void Cleanup()
+    {
+        driver.Close();
+        driver.Quit();
+    }
+
     [TestMethod]
     public void VerifyPageTitleText_ByTitle()
-    {
-        //arrange
-        var driver = new ChromeDriver();
-        driver.Navigate().GoToUrl("http://localhost:5253");
-            
+    { 
         //act
         var pageTitle = driver.Title;
             
         //assert
         Assert.AreEqual("- BreadNMadBakery", pageTitle);
-
-        driver.Quit();
     }
 
     [TestMethod]
     public void VerifyMainHeaderText_ByTagName()
     {
         //arrange
-        var driver = new ChromeDriver();
-        driver.Navigate().GoToUrl("http://localhost:5253");
+        
         var headerElement = driver.FindElement(By.TagName("header"));
         var paragraphElement = headerElement.FindElement(By.TagName("p"));
 
@@ -45,8 +54,7 @@ public class MainTests
     public void VerifyCartImage_ById()
     {
         //arrange
-        var driver = new ChromeDriver();
-        driver.Navigate().GoToUrl("http://localhost:5253");
+        
 
         //act
         var cartImage = driver.FindElement(By.Id("Flat"));
@@ -63,9 +71,7 @@ public class MainTests
     public void VerifyCartImage_XPath_ById()
     {
         //arrange
-        var driver = new ChromeDriver();
-        driver.Navigate().GoToUrl("http://localhost:5253");
-
+    
         //act
         var cartImage = driver.FindElement(By.XPath("//*[@id='Flat']"));
 
@@ -81,8 +87,6 @@ public class MainTests
     public void GetPagesLinks_Home_XPath_Direct_Path()
     {
         //arrange
-        var driver = new ChromeDriver();
-        driver.Navigate().GoToUrl("http://localhost:5253");
         
         //act
         var homePageLink = driver.FindElement(By.XPath("//header/div/ul/li[1]"));
@@ -96,8 +100,6 @@ public class MainTests
     public void GetPagesLinks_About_Us_XPath_Text()
     {
         //arrange
-        var driver = new ChromeDriver();
-        driver.Navigate().GoToUrl("http://localhost:5253");
         
         //act
         var aboutPageLink = driver.FindElement(By.XPath("//a[text()='Про нас']"));
@@ -111,9 +113,7 @@ public class MainTests
     public void GetPagesLinks_Contacts_XPath_Starts_With()
     {
         //arrange
-        var driver = new ChromeDriver();
-        driver.Navigate().GoToUrl("http://localhost:5253");
-        
+                
         //act
         var contactPageLink = driver.FindElement(By.XPath("//a[starts-with(text(), 'Конт')]"));
 
@@ -125,9 +125,7 @@ public class MainTests
     public void GetPagesLinks_Contacts_Not_Found_XPath_Starts_With()
     {
         //arrange
-        var driver = new ChromeDriver();
-        driver.Navigate().GoToUrl("http://localhost:5253");
-        
+                
         //act
         var contactPageLink = driver.FindElement(By.XPath("//a[starts-with(text(), 'онт')]"));
 
@@ -139,8 +137,6 @@ public class MainTests
     public void GetPagesLinks_Contacts_XPath_Contains()
     {
         //arrange
-        var driver = new ChromeDriver();
-        driver.Navigate().GoToUrl("http://localhost:5253");
         
         //act
         var contactPageLink = driver.FindElement(By.XPath("//a[contains(text(), 'онт')]"));
